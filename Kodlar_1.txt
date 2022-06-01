@@ -63,37 +63,32 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	SSD1306_ScrollRight(0x00, 0x0F);
-		HAL_Delay(2000);	//2 Saniye bekle
-		SSD1306_ScrollLeft(0x00, 0x0F);
-		HAL_Delay(2000);	//2 Saniye bekle
-		SSD1306_Stopscroll();
-		SSD1306_Clear();
+	
 		SSD1306_GotoXY (1,1);		//Karakterin yazilacagi x,y koordinatlari.
 		//sprintf(buf,"Acc X=%0.3f",say);
 		SSD1306_Puts ("EFE NECATI", &Font_11x18, 1);
 		SSD1306_UpdateScreen();
 		HAL_Delay(2000);
-		SSD1306_ScrollRight(0x00, 0x0F);		//Tüm ekrani saga kaydir.
+		SSD1306_ScrollRight(0x00, 0x0F);	  //Tüm ekrani saga kaydir.
 		HAL_Delay(2000);
-    SSD1306_ScrollLeft(0x00, 0x0F);			//Tüm ekrani sola kaydir.
+                SSD1306_ScrollLeft(0x00, 0x0F);	          //Tüm ekrani sola kaydir.
 		HAL_Delay(2000);
-    SSD1306_Scrolldiagright(0x00, 0x0F);//Tüm ekrani çapraz saga kaydir.
+                SSD1306_Scrolldiagright(0x00, 0x0F);      //Tüm ekrani çapraz saga kaydir.
 		HAL_Delay(2000);
-    SSD1306_Scrolldiagleft(0x00, 0x0F);	//Tüm ekrani çapraz sola kaydir.
+                SSD1306_Scrolldiagleft(0x00, 0x0F);	//Tüm ekrani çapraz sola kaydir.
 		HAL_Delay(2000);
-    SSD1306_Stopscroll();								//kaydirmayi birak. yapilmazsa, ekran kaydirmaya devam et.
-		SSD1306_InvertDisplay(1);						//invertör ekrani.
+                SSD1306_Stopscroll();			//kaydirmayi birak. yapilmazsa, ekran kaydirmaya devam et.
+		SSD1306_InvertDisplay(1);		//invertör ekrani.
 		HAL_Delay(2000);
-		SSD1306_InvertDisplay(0);						//Ekrani normallestir.
+		SSD1306_InvertDisplay(0);		//Ekrani normallestir.
 
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 	
-		SSD1306_Clear();													//ekrani temizle
-		SSD1306_DrawBitmap(0,0,horse1,128,64,1);	//horse1'deki kodlari bit bit isle
-		SSD1306_UpdateScreen();										//ekrani güncelle
+		SSD1306_Clear();			        //ekrani temizle
+		SSD1306_DrawBitmap(0,0,horse1,128,64,1);        //horse1'deki kodlari bit bit isle
+		SSD1306_UpdateScreen();			        //ekrani güncelle
 		
 		SSD1306_Clear();
 		SSD1306_DrawBitmap(0,0,horse2,128,64,1);	//horse2'deki kodlari bit bit isle
@@ -130,7 +125,7 @@ int main(void)
 		SSD1306_Clear();
 		SSD1306_DrawBitmap(0,0,horse10,128,64,1);	//horse10'daki kodlari bit bit isle
 		SSD1306_UpdateScreen();
-		HAL_Delay(2000);													//2 saniye bekle
+		HAL_Delay(2000);				//2 saniye bekle
   }
   /* USER CODE END 3 */
 }
